@@ -10,7 +10,7 @@ use App\Models\Dice;
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <meta http-equiv="Refresh" content="5">
+    <meta http-equiv="Refresh" content="3">
 </head>
 <body>
 <h1>サイコロ画面</h1>
