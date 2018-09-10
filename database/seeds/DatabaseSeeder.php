@@ -19,5 +19,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
             BeaconSeeder::class,
         ]);
+
+        $this->call([
+            DicesSeeder::class,
+        ]);
+
     }
 }
