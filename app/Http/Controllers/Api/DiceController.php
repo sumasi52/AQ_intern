@@ -15,16 +15,26 @@ class DiceController extends Controller
         $dice_id = ($request->input('dice_id'));
         $angle = ($request->input('angle'));
 
+
         //サイコロの目
+        /*
         $number = ceil($angle*6/680);
         if($number == 0){
             $number = 1;
         }
+        */
+        $number = $angle;
 
-        $dice_data = Dice::updateOrCreate(['dice_id' => $dice_id], ['angle'=>$angle,'number' => $number]);
+
+        if(!$dice_id==''){
+            $dice_data = Dice::updateOrCreate(['dice_id' => $dice_id], ['angle'=>$angle,'number' => $number]);
+
+        }
+
         $dices = DB::table('dices')->get();
 
 
         return view('index', ['dices' => $dices]);
     }
+
 }

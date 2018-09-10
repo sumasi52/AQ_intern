@@ -20,6 +20,7 @@ Route::get('/employee/{family_name}/{given_name}','Api\EmployeeController@match'
 Route::get('/index/', 'Api\EmployeeController@error');
 Route::get('/employee/{given_name}','Api\EmployeeController@test');
 Route::get('/dices','Api\DiceController@number');
+Route::post('/dices','Api\DiceController@number');
 
 
 
