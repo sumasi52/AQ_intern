@@ -10,26 +10,33 @@ use App\Models\Dice;
     <meta charset="UTF-8">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <meta http-equiv="Refresh" content="3">
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script>
+        $(function() {
+            function ajax() {
+                setTimeout(function() {ajax()},3000);
+                $.ajax({
+                    url: '../dices/ajax',
+                    dataType: 'html',
+                    success: function(data) {
+                        $('#text').html(data);
+                    },
+                    error: function(data) {
+                    }
+                });
+            }
+            ajax();
+        });
+    </script>
+
 </head>
 <body>
-<h1>サイコロ画面</h1>
+<h1>ダイヤル画面</h1>
 <p>
 
 </p>
-
-<div class="container">
-    <?php foreach ($dices as $dice): ?>
-    <div class="item">
-        <div class="dice_id"><?php echo 'ID:'.$dice ->dice_id; ?></div>
-        <div class="dice_number"><?php echo $dice ->number; ?></div>
-    </div>
-        <?php endforeach; ?>
-
-</div>
-
-
-
+<div id="text"></div>
 
 </body>
 </html>
+

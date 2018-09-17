@@ -16,6 +16,7 @@ class CreateDicesTable extends Migration
         Schema::create('dices', function (Blueprint $table) {
             $table->increments('id');
             $table->string('dice_id',100);
+            $table->string('dice_name',100)->nullable();
             $table->unsignedInteger('angle')->nullable();
             $table->tinyInteger('number')->nullable();
             $table->timestamps();

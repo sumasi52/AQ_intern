@@ -19,10 +19,8 @@ class BeaconController extends Controller
         $beacon = Beacon::where('major', $major)->where('minor', $minor)->first();
 
         if (!isset($beacon)){
-            //echo "あかんで";
             return response()->json('ビーコンテーブルから情報を取得できません',500);
         }else{
-            //echo "入っとるで";
             Employee::where('family_name', $family_name)->Where('given_name', $given_name)->update(['position'=> $beacon->position]);
             return response()->json('success');
         }

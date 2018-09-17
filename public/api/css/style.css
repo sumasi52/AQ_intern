@@ -43,11 +43,26 @@ ul {
     text-align: center;
 }
 
-.item{
+.edit_button{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.fas{
+    background:none;
+    border:0;
+}
+
+
+.item {
+    position: relative;
     color: #666; /* 文字色 */
     background-color: #f7f7f7; /* 背景色 */
     border: 1px solid #ccc; /* 枠線 */
     height: 250px;
-    width:  250px;
+    width: 250px;
 
 }
+
+

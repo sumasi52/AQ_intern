@@ -19,7 +19,9 @@ Route::post('/employee/{family_name}/{given_name}/position','Api\BeaconControlle
 Route::get('/employee/{given_name}','Api\EmployeeController@test');
 Route::get('/index/', 'Api\EmployeeController@error');
 
-Route::get('/employee/{given_name}','Api\EmployeeController@test');
+Route::any('/dices','Api\DiceController@number');
+Route::any('/dices/edit','Api\EditController@edit');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
